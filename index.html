@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEMKEM | Web3 Content Creator & Digital Marketer</title>
+  <meta name="description" content="KEMKEM (Ekemini Nelson) is a Nigerian Web3 Content Creator, Digital Marketer, Community Builder, and Personal Finance Educator simplifying DeFi and driving Web3 growth through storytelling." />
+  <meta name="keywords" content="KEMKEM, Ekemini Nelson, Web3 content creator, digital marketer, DeFi education, crypto threads, community building, Nigeria" />
+  <meta name="author" content="KEMKEM (Ekemini Nelson)" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KEMKEM | Web3 Content Creator & Digital Marketer" />
+  <meta property="og:description" content="Web3 Storyteller & Growth Architect. Simplifying DeFi, building communities, and driving Web3 growth through content & marketing." />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/2036101961867747328/SNO7fKKs.jpg" />
+  <meta property="og:url" content="https://x.com/kemkemcrypt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KEMKEM | Web3 Content Creator & Digital Marketer" />
+  <meta name="twitter:description" content="Nigerian Web3 storyteller, marketer, and community builder helping people understand crypto and DeFi." />
+  <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/2036101961867747328/SNO7fKKs.jpg" />
+  <meta name="twitter:creator" content="@kemkemcrypt" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              neonPurple: "#a855f7",
+              neonCyan: "#22d3ee",
+              neonMagenta: "#ec4899"
+            },
+            boxShadow: {
+              neon: "0 0 0 1px rgba(148,163,184,0.25), 0 12px 40px rgba(34,211,238,0.12), 0 18px 60px rgba(168,85,247,0.2)"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="overflow-x-hidden text-slate-100 antialiased">
+  <!-- Background Layers -->
+  <canvas id="particles" class="fixed inset-0 -z-20"></canvas>
+  <div class="ambient-glow pointer-events-none fixed inset-0 -z-10"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#home" class="text-xl font-extrabold tracking-[0.25em] neon-text">KEMKEM</a>
+
+      <nav class="hidden items-center gap-7 md:flex">
+        <a href="#home" class="text-sm text-slate-300 transition hover:text-neonCyan">Home</a>
+        <a href="#about" class="text-sm text-slate-300 transition hover:text-neonCyan">About</a>
+        <a href="#skills" class="text-sm text-slate-300 transition hover:text-neonCyan">Skills</a>
+        <a href="#work" class="text-sm text-slate-300 transition hover:text-neonCyan">Work</a>
+        <a href="#experience" class="text-sm text-slate-300 transition hover:text-neonCyan">Experience</a>
+        <a href="#contact" class="text-sm text-slate-300 transition hover:text-neonCyan">Contact</a>
+        <a href="https://x.com/kemkemcrypt" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 transition hover:border-neonCyan hover:text-neonCyan" aria-label="KEMKEM on X">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.633 7.584H.48l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <button id="menuBtn" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-slate-200 md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 px-4 pb-4 pt-3 md:hidden">
+      <div class="flex flex-col gap-3">
+        <a href="#home" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">Home</a>
+        <a href="#about" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">About</a>
+        <a href="#skills" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">Skills</a>
+        <a href="#work" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">Work</a>
+        <a href="#experience" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">Experience</a>
+        <a href="#contact" class="rounded-lg px-3 py-2 text-slate-300 transition hover:bg-slate-900 hover:text-neonCyan">Contact</a>
+        <a href="https://x.com/kemkemcrypt" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-2 rounded-lg border border-slate-700 px-3 py-2 text-slate-300 transition hover:border-neonCyan hover:text-neonCyan">
+          <span>Connect on X</span>
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.633 7.584H.48l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative flex min-h-[calc(100vh-4rem)] items-center">
+      <div class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div class="reveal">
+          <p class="mb-5 inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300">
+            Nigeria • @kemkemcrypt
+          </p>
+          <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+            KEMKEM <span class="text-slate-400">-</span> <span class="neon-text">Web3 Storyteller &amp; Growth Architect</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            Simplifying DeFi, building communities, and driving Web3 growth through content &amp; marketing.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="#work" class="btn-neon inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-neonPurple to-neonMagenta px-7 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]">
+              Explore My Work
+            </a>
+            <a href="https://x.com/kemkemcrypt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl border border-neonCyan/60 bg-slate-900/70 px-7 py-3 text-sm font-semibold text-neonCyan transition hover:bg-neonCyan/10">
+              Connect on X
+            </a>
+          </div>
+
+          <div class="mt-8 grid max-w-lg grid-cols-3 gap-3 text-center text-xs sm:text-sm">
+            <div class="glass rounded-xl p-3">
+              <p class="font-semibold text-neonCyan">Web3 Content</p>
+              <p class="mt-1 text-slate-400">Threads &amp; research</p>
+            </div>
+            <div class="glass rounded-xl p-3">
+              <p class="font-semibold text-neonPurple">Growth Strategy</p>
+              <p class="mt-1 text-slate-400">Social scaling</p>
+            </div>
+            <div class="glass rounded-xl p-3">
+              <p class="font-semibold text-neonMagenta">Community First</p>
+              <p class="mt-1 text-slate-400">Trust &amp; retention</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="heroArt" class="reveal mx-auto w-full max-w-md">
+          <div class="relative">
+            <div class="absolute -inset-10 rounded-full bg-gradient-to-r from-neonPurple/35 via-neonCyan/25 to-neonMagenta/30 blur-3xl"></div>
+            <div class="glass float-slow relative rounded-[2rem] p-8 shadow-neon">
+              <img src="https://pbs.twimg.com/profile_images/2036101961867747328/SNO7fKKs.jpg" alt="KEMKEM profile photo" class="mx-auto h-72 w-72 rounded-full border-4 border-slate-700/70 object-cover shadow-[0_0_45px_rgba(168,85,247,0.35)]" />
+              <div class="mt-6 text-center">
+                <h2 class="text-xl font-bold">KEMKEM (Ekemini Nelson)</h2>
+                <p class="mt-1 text-sm text-slate-300">Web3 Content Creator • Digital Marketer • Community Builder</p>
+                <p class="mt-3 inline-flex rounded-full border border-neonCyan/50 bg-neonCyan/10 px-3 py-1 text-xs text-neonCyan">Currently Building with @TechbridgeX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center reveal">
+          <p class="text-sm uppercase tracking-[0.2em] text-neonCyan">About Me</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">From Nigeria to Global Web3 Conversations</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-5">
+          <div class="reveal lg:col-span-2">
+            <div class="glass h-full rounded-3xl p-6">
+              <img src="https://pbs.twimg.com/profile_images/2036101961867747328/SNO7fKKs.jpg" alt="KEMKEM avatar" class="mx-auto h-48 w-48 rounded-full border-4 border-slate-700 object-cover" />
+              <div class="mt-6 space-y-3 text-sm text-slate-300">
+                <p><span class="text-slate-400">Name:</span> KEMKEM (Ekemini Nelson)</p>
+                <p><span class="text-slate-400">Handle:</span> @kemkemcrypt</p>
+                <p><span class="text-slate-400">Location:</span> Nigeria</p>
+                <p><span class="text-slate-400">Headline:</span> Web3 Storyteller &amp; Growth Architect</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal lg:col-span-3">
+            <div class="glass h-full rounded-3xl p-8">
+              <p class="text-base leading-relaxed text-slate-300 sm:text-lg">
+                I am KEMKEM, also known as Ekemini Nelson, a Nigerian Web3 Content Creator, Digital Marketer, Community Builder, and Personal Finance educator.
+                My journey into Web3 started with one mission: make complex crypto and DeFi ideas simple, clear, and practical for everyday people.
+                Today, I create educational Web3 threads, DeFi breakdowns, and strategic content systems that help brands grow real communities, build trust, and tell better stories.
+                I specialize in social media growth strategy, digital marketing campaigns, community management, and brand storytelling for Web3 projects.
+                I am currently building with <span class="text-neonCyan">@TechbridgeX</span>, and I stay deeply committed to financial empowerment through Web3 education.
+              </p>
+              <div class="mt-7 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">Crypto Education</span>
+                <span class="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">DeFi Research</span>
+                <span class="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">Content Strategy</span>
+                <span class="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">Growth Marketing</span>
+                <span class="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">Community Building</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center reveal">
+          <p class="text-sm uppercase tracking-[0.2em] text-neonPurple">Skills</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Core Expertise</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonPurple to-neonMagenta text-sm font-bold">CC</div>
+            <h3 class="text-lg font-semibold">Content Creation</h3>
+            <p class="mt-2 text-sm text-slate-300">Educational threads, long-form articles, and DeFi research content that drives trust and clarity.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonCyan to-neonPurple text-sm font-bold">SM</div>
+            <h3 class="text-lg font-semibold">Social Media Strategy</h3>
+            <p class="mt-2 text-sm text-slate-300">Growth-focused social systems, content calendars, and platform-native strategies for Web3 brands.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonMagenta to-neonPurple text-sm font-bold">DM</div>
+            <h3 class="text-lg font-semibold">Digital Marketing</h3>
+            <p class="mt-2 text-sm text-slate-300">Campaign design and audience targeting to increase awareness, engagement, and conversion.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonPurple to-neonCyan text-sm font-bold">CB</div>
+            <h3 class="text-lg font-semibold">Community Building</h3>
+            <p class="mt-2 text-sm text-slate-300">Community setup, moderation frameworks, and engagement loops that keep users active and loyal.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonCyan to-neonMagenta text-sm font-bold">DF</div>
+            <h3 class="text-lg font-semibold">DeFi &amp; Web3 Education</h3>
+            <p class="mt-2 text-sm text-slate-300">Simplified explanations of protocols, token mechanics, risks, and opportunities in decentralized finance.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonPurple to-neonMagenta text-sm font-bold">BS</div>
+            <h3 class="text-lg font-semibold">Brand Storytelling</h3>
+            <p class="mt-2 text-sm text-slate-300">Narratives that align product value with audience emotion, trust, and long-term brand equity.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonMagenta to-neonCyan text-sm font-bold">PF</div>
+            <h3 class="text-lg font-semibold">Personal Finance Content</h3>
+            <p class="mt-2 text-sm text-slate-300">Practical crypto finance education to help people make informed and responsible money decisions.</p>
+          </div>
+          <div class="glass reveal rounded-2xl p-6 transition hover:-translate-y-1 hover:border-neonCyan/50">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-neonCyan to-neonPurple text-sm font-bold">UX</div>
+            <h3 class="text-lg font-semibold">Graphic Design &amp; UI/UX</h3>
+            <p class="mt-2 text-sm text-slate-300">Clean visual assets and user-centered design elements for high-impact communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center reveal">
+          <p class="text-sm uppercase tracking-[0.2em] text-neonMagenta">Featured Work</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Projects &amp; Campaign Highlights</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonPurple/40 via-neonCyan/20 to-neonMagenta/40 p-5">
+              <h3 class="text-xl font-semibold">Viral Web3 Threads</h3>
+              <p class="mt-2 text-sm text-slate-200">Educational thread series that turned technical topics into shareable insights.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Built multi-post explainers around market trends, DeFi protocols, and practical user guides.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Web3</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Content</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">DeFi</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonCyan/35 via-neonPurple/20 to-neonMagenta/35 p-5">
+              <h3 class="text-xl font-semibold">Community Growth Campaigns</h3>
+              <p class="mt-2 text-sm text-slate-200">Community-first campaigns designed for retention and engagement velocity.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Created onboarding funnels, weekly activation events, and engagement playbooks for community teams.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Web3</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Marketing</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Community</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonMagenta/35 via-neonPurple/25 to-neonCyan/30 p-5">
+              <h3 class="text-xl font-semibold">DeFi Educational Series</h3>
+              <p class="mt-2 text-sm text-slate-200">Step-by-step breakdowns that made DeFi understandable for beginners and intermediates.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Explained yield strategies, protocol risks, and portfolio thinking in plain language with clear visuals.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">DeFi</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Education</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Content</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonPurple/35 via-neonMagenta/25 to-neonCyan/30 p-5">
+              <h3 class="text-xl font-semibold">Social Media Management for Web3 Projects</h3>
+              <p class="mt-2 text-sm text-slate-200">End-to-end social media operations for crypto-native brands.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Owned content pipelines, posting schedules, engagement analytics, and brand voice consistency.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Web3</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Marketing</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Content</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonCyan/35 via-neonMagenta/25 to-neonPurple/30 p-5">
+              <h3 class="text-xl font-semibold">Brand Storytelling Launch Kits</h3>
+              <p class="mt-2 text-sm text-slate-200">Narrative frameworks and content arcs for token and product launches.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Aligned founder story, ecosystem value, and audience messaging into one cohesive launch voice.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Brand</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Marketing</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Web3</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+
+          <article class="glass reveal flex h-full flex-col overflow-hidden rounded-2xl">
+            <div class="h-40 bg-gradient-to-br from-neonMagenta/35 via-neonCyan/20 to-neonPurple/35 p-5">
+              <h3 class="text-xl font-semibold">Crypto Personal Finance Playbooks</h3>
+              <p class="mt-2 text-sm text-slate-200">Actionable guides on managing risk and building smart crypto habits.</p>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex-1 text-sm text-slate-300">Produced easy-to-use content around portfolio discipline, risk awareness, and responsible investing principles.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Finance</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Education</span>
+                <span class="rounded-full border border-slate-700 px-2.5 py-1 text-xs">Web3</span>
+              </div>
+              <a href="#" class="mt-5 inline-flex w-max rounded-lg border border-neonCyan/50 px-4 py-2 text-sm text-neonCyan transition hover:bg-neonCyan/10">View Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center reveal">
+          <p class="text-sm uppercase tracking-[0.2em] text-neonCyan">Experience &amp; Journey</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Building Growth Through Story + Community</h2>
+        </div>
+
+        <div class="relative mx-auto max-w-4xl">
+          <div class="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-neonCyan via-neonPurple to-neonMagenta"></div>
+
+          <div class="space-y-8">
+            <article class="reveal relative pl-12">
+              <span class="absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-neonCyan shadow-[0_0_20px_rgba(34,211,238,0.9)]"></span>
+              <div class="glass rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-neonCyan">2025 - Present</p>
+                <h3 class="mt-2 text-xl font-semibold">Web3 Growth &amp; Content - @TechbridgeX</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Currently building strategic content, social growth systems, and community-led storytelling that strengthens Web3 product adoption.</p>
+              </div>
+            </article>
+
+            <article class="reveal relative pl-12">
+              <span class="absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-neonPurple shadow-[0_0_20px_rgba(168,85,247,0.9)]"></span>
+              <div class="glass rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-neonPurple">2023 - Present</p>
+                <h3 class="mt-2 text-xl font-semibold">Independent Web3 Content Creator &amp; Marketer</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Developing educational content ecosystems, DeFi explainers, and performance-driven social campaigns for Web3 audiences and brands.</p>
+              </div>
+            </article>
+
+            <article class="reveal relative pl-12">
+              <span class="absolute left-[9px] top-2 h-3.5 w-3.5 rounded-full bg-neonMagenta shadow-[0_0_20px_rgba(236,72,153,0.9)]"></span>
+              <div class="glass rounded-2xl p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-neonMagenta">2022 - Present</p>
+                <h3 class="mt-2 text-xl font-semibold">Community Builder in Nigeria's Web3 Ecosystem</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Supporting local and global communities with education-driven engagement, trust building, and clear communication around crypto opportunities.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center reveal">
+          <p class="text-sm uppercase tracking-[0.2em] text-neonPurple">Testimonials</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">What People Say</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <blockquote class="glass reveal rounded-2xl p-7">
+            <p class="text-slate-200">"KEMKEM helped us translate a complex product into content people actually understood. Our engagement rate and quality conversations improved within weeks."</p>
+            <footer class="mt-5 text-sm text-slate-400">[Founder Name Placeholder] • Founder, Web3 Protocol</footer>
+          </blockquote>
+
+          <blockquote class="glass reveal rounded-2xl p-7">
+            <p class="text-slate-200">"The clarity, consistency, and community-first energy in KEMKEM's work made our members feel seen and informed. She turned confusion into confidence."</p>
+            <footer class="mt-5 text-sm text-slate-400">[Community Lead Placeholder] • Community Member &amp; Moderator</footer>
+          </blockquote>
+
+          <blockquote class="glass reveal rounded-2xl p-7">
+            <p class="text-slate-200">"From storytelling to campaign execution, KEMKEM delivered with strategy and creativity. She understands both the Web3 culture and growth fundamentals."</p>
+            <footer class="mt-5 text-sm text-slate-400">[Brand Manager Placeholder] • Marketing Lead, Web3 Brand</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div class="reveal glass rounded-3xl p-8">
+            <p class="text-sm uppercase tracking-[0.2em] text-neonCyan">Contact</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Let's build something in Web3 together.</h2>
+            <p class="mt-5 text-slate-300">
+              Need a Web3 content strategist, digital marketer, or community growth partner? Send a message and let's collaborate.
+            </p>
+
+            <div class="mt-8 space-y-3 text-sm">
+              <p class="text-slate-300"><span class="text-slate-400">X:</span> <a href="https://x.com/kemkemcrypt" target="_blank" rel="noopener noreferrer" class="text-neonCyan hover:underline">@kemkemcrypt</a></p>
+              <p class="text-slate-300"><span class="text-slate-400">Email:</span> <a href="mailto:hello@kemkemcrypt.com" class="text-neonCyan hover:underline">hello@kemkemcrypt.com</a></p>
+              <p class="text-slate-300"><span class="text-slate-400">Location:</span> Nigeria</p>
+            </div>
+          </div>
+
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="reveal glass rounded-3xl p-8">
+            <div class="space-y-5">
+              <div>
+                <label for="name" class="mb-2 block text-sm text-slate-300">Name</label>
+                <input id="name" name="name" type="text" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-neonCyan focus:ring-2 focus:ring-neonCyan/30" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="mb-2 block text-sm text-slate-300">Email</label>
+                <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-neonCyan focus:ring-2 focus:ring-neonCyan/30" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="message" class="mb-2 block text-sm text-slate-300">Message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-neonCyan focus:ring-2 focus:ring-neonCyan/30" placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn-neon w-full rounded-xl bg-gradient-to-r from-neonPurple to-neonMagenta px-6 py-3 font-semibold text-white transition hover:scale-[1.01]">
+                Send Message
+              </button>
+              <p id="formStatus" class="text-sm text-slate-400"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-slate-400 sm:px-6 lg:flex-row lg:px-8">
+      <p>© 2026 KEMKEM. All Rights Reserved.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#home" class="transition hover:text-neonCyan">Home</a>
+        <a href="#about" class="transition hover:text-neonCyan">About</a>
+        <a href="#skills" class="transition hover:text-neonCyan">Skills</a>
+        <a href="#work" class="transition hover:text-neonCyan">Work</a>
+        <a href="#contact" class="transition hover:text-neonCyan">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://x.com/kemkemcrypt" target="_blank" rel="noopener noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 transition hover:border-neonCyan hover:text-neonCyan" aria-label="KEMKEM on X">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.633 7.584H.48l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back To Top -->
+  <button id="backToTop" class="fixed bottom-6 right-6 z-50 hidden h-11 w-11 items-center justify-center rounded-full border border-neonCyan/50 bg-slate-900/90 text-neonCyan shadow-lg shadow-neonCyan/20 hover:bg-neonCyan/10" aria-label="Back to top">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Interactivity -->
+  <script src="./script.js"></script>
+</body>
+</html>

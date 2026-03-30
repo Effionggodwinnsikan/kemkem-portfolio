@@ -1,0 +1,231 @@
+/* =========================
+   Base Styles
+   ========================= */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: #0a0a0a;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -9;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(circle at center, black 35%, transparent 90%);
+  mask-image: radial-gradient(circle at center, black 35%, transparent 90%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -8;
+  pointer-events: none;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Ccircle cx='12' cy='18' r='1' fill='%23ffffff'/%3E%3Ccircle cx='72' cy='40' r='1' fill='%23ffffff'/%3E%3Ccircle cx='120' cy='96' r='1' fill='%23ffffff'/%3E%3Ccircle cx='38' cy='92' r='1' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+::selection {
+  color: #e2e8f0;
+  background: rgba(168, 85, 247, 0.35);
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.35));
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 60px rgba(2, 6, 23, 0.45);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow:
+    0 16px 60px rgba(2, 6, 23, 0.55),
+    0 0 0 1px rgba(34, 211, 238, 0.18);
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.06) 48%, transparent 72%);
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+.glass:hover::before {
+  transform: translateX(130%);
+}
+
+.neon-text {
+  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-neon {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.35), 0 8px 30px rgba(34, 211, 238, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.btn-neon:hover::after {
+  left: 145%;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+#particles {
+  opacity: 0.55;
+}
+
+.ambient-glow {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(168, 85, 247, 0.18), transparent 32%),
+    radial-gradient(circle at 82% 0%, rgba(34, 211, 238, 0.15), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.14), transparent 30%);
+}
+
+#backToTop {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:not([aria-label]) {
+  position: relative;
+}
+
+header nav a:not([aria-label])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 1px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+}
+
+header nav a:not([aria-label]):hover::after,
+header nav a:not([aria-label]):focus-visible::after {
+  transform: scaleX(1);
+}
+
+#work article {
+  transition: transform 0.3s ease;
+}
+
+#work article:hover {
+  transform: translateY(-6px);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.9);
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.7) rgba(15, 23, 42, 0.7);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.9);
+  background: linear-gradient(180deg, #22d3ee, #a855f7);
+}
+
+section {
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(94%, 1020px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.22), transparent);
+  pointer-events: none;
+}
+
+section:last-of-type::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
